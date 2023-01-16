@@ -35,7 +35,7 @@ Uso del printf ---> ![LCD 2x16 tipo HD44780](./otros/uso_printf.png)
 
 `vsprintf` Salida de cadena formateada a un buffer de la memoria de datos con los argumentis para procesar la cadena de formato  proporcionada a través de la función stdarg.
 
-`_usart_put`c Salida de un solo carácter al USART (USART1 para los dispositivos que tienen más de un USART).
+`_usart_putc` Salida de un solo carácter al USART (USART1 para los dispositivos que tienen más de un USART).
 
 `_user_putc` Salida de un solo carácter de una manera definida por la aplicación.
 
@@ -76,7 +76,7 @@ Ejemplos printf ---> ![Ejemplos printf](./otros/ejemplos_prrintf.png)
 `%G`	Same as %g but will use capital E for exponent
 
 ### Carácteres Banderas:
-- `#` Presentará la forma alternativa del resiltado. Para la conversión de o, la forma alternativa es como si se aumentara la precisión de tal manera que el primer dígito del resultado se ve obligado a ser cero. Para la conversión con x, un resultado distinto a cero tendrá un prefijo 0x agregado. Para la conversión con X, un resultado distinto de cero trendrá un prefijo 0X agregado. Para la conversión con b, un resultado distinto de cero tendrá un prefijo 0b agregado. Para la conversión B, un resultado distinto de cero tendrá un prefijo 0B agregado. Para otras conversiones, la bandera se ignora.
+- `#` Presentará la forma alternativa del resultado. Para la conversión de o, la forma alternativa es como si se aumentara la precisión de tal manera que el primer dígito del resultado se ve obligado a ser cero. Para la conversión con x, un resultado distinto a cero tendrá un prefijo 0x agregado. Para la conversión con X, un resultado distinto de cero trendrá un prefijo 0X agregado. Para la conversión con b, un resultado distinto de cero tendrá un prefijo 0b agregado. Para la conversión B, un resultado distinto de cero tendrá un prefijo 0B agregado. Para otras conversiones, la bandera se ignora.
 - `-` El resultado se justificará a la izquierda. Si no se especifica esta bandera, el resultado estará justificado a la derecha.
 - `+` Para una conversión con signo, el resultado siempre comenzará con un signo + o -. De forma predeterminada, solo se agrega un carácter de signo al resultado si el resultado es negativo. Para otras conversiones, la bandera se ignora.
 - `espacio` Para una conversión firmada, si el resultado no es negativo o no tiene caracteres, se antepondrá un espacio al resultado. Si se especifican los indicadores de espacio y +, se ignorará el indicador de espacio. Para ptras conversiones, la bandera se ignora.
@@ -114,7 +114,7 @@ que se ve un carácter de terminación '\0' (el carácter '\0' no se escribe) o 
 - `P` El puntero al argumento void (datos o memoria de programa) está configurado se convierte a un tipo de entero sin signo de tamaño equivalente y ese valor se
 procesa como si se hubiera especificado el operador de conversión X. Si el especificador de tamaño H está presente, el puntero es un puntero de 24 bits; de lo
 contrario, es un puntero de 16 bits.
-- `n` El número de caracteres escritos hasta el momento se almacenará en la ubicación ción a la que hace referencia el argumento, que es un puntero a un tipo entero en la memoria de datos. El tamaño del tipo entero está determinado por el especificador de tamaño presente para la conversión, o un entero simple de 16 bits si no hay ningún especificador de tamaño presente.
+- `n` El número de caracteres escritos hasta el momento se almacenará en la ubicación a la que hace referencia el argumento, que es un puntero a un tipo entero en la memoria de datos. El tamaño del tipo entero está determinado por el especificador de tamaño presente para la conversión, o un entero simple de 16 bits si no hay ningún especificador de tamaño presente.
 - `%` Se escribe un carácter % literal. La especificación de conversión será %% solamente, no pueden estar presentes banderas u otros especificadores. Si un especificador de conversión no es válido (p. ej., un carácter indicador está presente para el especificador de conversión %%), el comportamiento no está definido. fprintf devuelve EOF si se produce un error; de lo contrario, devuelve el número de caracteres de salida.
 
 
