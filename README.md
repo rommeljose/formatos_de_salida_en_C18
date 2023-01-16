@@ -17,27 +17,27 @@ Uso del printf ---> ![LCD 2x16 tipo HD44780](./otros/uso_printf.png)
 
 ## Funciones que tienen salida por el puerto serial:
 
-`fprintf`	Formatted string output to a stream.
+`fprintf`	Salida de cadena formateada a un stream.
 
-`fputs` String output to a stream.
+`fputs` Salida de cadena a un stream.
 
-`printf` Formatted string output to stdout.
+`printf` Salida de cadena formateada al stdout.
 
-`putc` Character output to a stream
+`putc` Salida de carácter a un stream.
 
-`puts` String output to stdout.
+`puts` Secuencia de salida de cadena al stdout.
 
-`sprintf` Formatted string output to a data memory buffer.
+`sprintf` Salida de cadena formateada a un buffer de la memoria de datos.
 
-`vfprintf` Formatted string output to a stream with the arguments for processing the format string supplied via the stdarg facility.
+`vfprintf` Salida de cadena formateada a un stream con los argumentis para procesar la cadena de formato  proporcionada a través de la función stdarg.
 
-`vprintf` Formatted string output to stdout with the arguments for processing the format string supplied via the stdarg facility.
+`vprintf` Salida de cadena formateada al stdout con los argumentis para procesar la cadena de formato  proporcionada a través de la función stdarg.
 
-`vsprintf` Formatted string output to a data memory buffer with the arguments for processing the format string supplied via the stdarg facility.
+`vsprintf` Salida de cadena formateada a un buffer de la memoria de datos con los argumentis para procesar la cadena de formato  proporcionada a través de la función stdarg.
 
-`_usart_put`c Single character output to the USART (USART1 for devices which have more than one USART).
+`_usart_put`c Salida de un solo carácter al USART (USART1 para los dispositivos que tienen más de un USART).
 
-`_user_putc` Single character output in an application defined manner.
+`_user_putc` Salida de un solo carácter de una manera definida por la aplicación.
 
 Ejemplos printf ---> ![Ejemplos printf](./otros/ejemplos_prrintf.png)
 
