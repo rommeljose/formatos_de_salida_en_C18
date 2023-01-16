@@ -118,4 +118,4 @@ contrario, es un puntero de 16 bits.
 - `%` Se escribe un carácter % literal. La especificación de conversión será %% solamente, no pueden estar presentes banderas u otros especificadores. Si un especificador de conversión no es válido (p. ej., un carácter indicador está presente para el especificador de conversión %%), el comportamiento no está definido. fprintf devuelve EOF si se produce un error; de lo contrario, devuelve el número de caracteres de salida.
 
 
->> **ver:** [The printf() Function](https://microchipdeveloper.com/tls2101:printf))
+>> **ver:** [The printf() Function](https://microchipdeveloper.com/tls2101:printf) y [MPLAB_C18_Libraries_51297e.pdf](https://github.com/rommeljose/MPLAB-C18/blob/fe1733e71892ce45d670f2f1202f8a638bfe136e/MPLAB_C18_Libraries_51297e.pdf)
