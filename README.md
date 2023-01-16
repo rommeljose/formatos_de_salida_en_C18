@@ -39,7 +39,9 @@ Uso del printf ---> ![LCD 2x16 tipo HD44780](./otros/uso_printf.png)
 
 `_user_putc` Single character output in an application defined manner.
 
-## Format Specifier	Meaning
+Ejemplos printf ---> ![Ejemplos printf](./otros/ejemplos_prrintf.png)
+
+## Especificadores de formatos:
 
 %c	Single character
 
