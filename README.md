@@ -15,7 +15,7 @@
 
 Uso del printf ---> ![LCD 2x16 tipo HD44780](./otros/uso_printf.png)
 
-## Funciones externas del LCD:
+## Funciones que tienen salida por el puerto serial:
 
 `fprintf`	Formatted string output to a stream.
 
