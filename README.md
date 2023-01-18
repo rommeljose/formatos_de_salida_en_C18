@@ -1,25 +1,26 @@
-# Usar_C18_Native
-> Ejemplo de uso de la librería "usart.h".
-> modo nativo; con el Pic **18F4620**
-> 
+# Formatos de Salida de datos en el Compilador C18 de Microchip
+
+
  por: Rommel Contreras - _rommeljose@gmail.com_
 
-> Este programa, permite la exploración y uso de la librería usart.h del compilador C18 (MPLAB® C18); de uso general para la familia de
+> Esta rutina en C, permite la exploración y uso de la librería usart.h del compilador C18 (MPLAB® C18); de uso general para la familia de
 > microcontroladores PIC18xxx.
-> El programa se desarrollo como plataforma para paracticar las utilidades de impresión o salida al puerto serial, tales como:
-
-> Esto requiere del uso y configuración de un Puerto Serial, basada en un módulo UART del Pic utilizado. 
+> 
+> Esto requiere del uso y configuración de un Puerto Serial, basada en un módulo UART del Pic utilizado.
+> Ejemplo de uso de la librería "usart.h".
+> modo nativo; con el Pic **18F4620**
+> programa: Usar_C18_Native
 >> **ver:** [MPLAB_C18_Libraries_51297e.pdf](MPLAB_C18_Libraries_51297e.pdf)
 
->> El propósito de esta práctica de laboratorio es ilustrar el uso de la función de biblioteca C estándar printf() . Dado que su propósito original era imprimir texto en el dispositivo de salida estándar de una computadora (pantalla de monitor o impresora),
+>> El propósito de esta práctica es ilustrar el uso de la función de biblioteca C estándar printf(); y semejantes . Dado que su propósito original era imprimir texto en el dispositivo de salida estándar de una computadora (pantalla de monitor o impresora). El programa se desarrollo como plataforma para paracticar las utilidades de impresión o salida al puerto serial.
 
-Uso del printf ---> ![LCD 2x16 tipo HD44780](./otros/uso_printf.png)
+Uso del printf ---> ![Esuema General](./otros/uso_printf.png)
 
 ## Funciones que tienen salida por el puerto serial:
 
-`fprintf`	Salida de cadena formateada a un stream.
+`fprintf`	Salida de cadena formateada a un stream o archivo.
 
-`fputs` Salida de cadena a un stream.
+`fputs` Salida de cadena a un stream o archivo.
 
 `printf` Salida de cadena formateada al stdout.
 
@@ -41,12 +42,12 @@ Uso del printf ---> ![LCD 2x16 tipo HD44780](./otros/uso_printf.png)
 
 Ejemplos printf ---> ![Ejemplos printf](./otros/ejemplos_prrintf.png)
 
-> La  cadena  de  formato  se  procesa  un  carácter  a  la  vez  y  los  caracteres  se  emiten  tal  como  aparecen  en  la  cadena  de  formato;  a  excepción  de  los  especificadores  de  formato.  Un  especificador  de  formato  se  indica  en  la  cadena  de  formato  mediante  un  signo  de  porcentaje,  %;  a  continuación,  un  especificador  de  formato  bien  formado  tiene  los  siguientes  componentes.Excepto  por  la  operación  de  conversión,  todos  los  especificadores  de  formato  son  opcionales: 
+> La  cadena  de  formato  se  procesa  un  carácter  a  la  vez  y  los  caracteres  se  emiten  tal  como  aparecen  en  la  cadena  de  formato;  a  excepción  de  los  especificadores  de  formato.  Un  especificador  de  formato  se  indica  en  la  cadena  de  formato  mediante  un  signo  de  porcentaje  (%);  a  continuación,  un  especificador  de  formato  bien  formado  tiene  los  siguientes  componentes. Excepto  por  la  operación  de  conversión,  todos  los  especificadores  de  formato  son  opcionales: 
 
-1.	Caracteres  de  bandera  (el  orden  no  importa),  donde  un  carácter  de  bandera  es  uno  de  #,  -,  + ,  0  o  espacio.
+1.	Caracteres  de  bandera  (el  orden  no  importa),  donde  un  carácter  de  bandera  es  uno  de:  #,  -,  + ,  0  o  espacio.
 2.	Un ancho de campo, que es un valor constante entero decima o un asterisco (*).
 3.	Una precisión de campo, que es un punto (.); opcionalmente seguido de un entero, decimal o un asterisco (*).
-4.	Una especificación de tamaño, que es uno de los especificadores h, H, hh, j, z, Z, t, T o l.
+4.	Una especificación de tamaño, que es uno de los especificadores: h, H, hh, j, z, Z, t, T o l.
 5.	Una  operación  de  conversión,  que  se expresa por uno de los siguientes caráteres: c,  b,  B,  d,  i,  n,  o,  p,  P,  s,  S,  u,  x,  X  o  %.
 
 ## Especificadores de formatos:
@@ -65,7 +66,7 @@ Ejemplos printf ---> ![Ejemplos printf](./otros/ejemplos_prrintf.png)
 
 `%X`	Same as %x but with upper case digits (e.g. 1A5E)
 
-`%f`	Signed decimal value (floating point)
+`%f`	Signed decimal value (floating point); (esta especificación no aplica correctamente para C18)
 
 `%e`	Signed decimal value with exponent (e.g. 1.26e-5)
 
@@ -76,14 +77,14 @@ Ejemplos printf ---> ![Ejemplos printf](./otros/ejemplos_prrintf.png)
 `%G`	Same as %g but will use capital E for exponent
 
 ### Carácteres Banderas:
-- `#` Presentará la forma alternativa del resultado. Para la conversión de o, la forma alternativa es como si se aumentara la precisión de tal manera que el primer dígito del resultado se ve obligado a ser cero. Para la conversión con x, un resultado distinto a cero tendrá un prefijo 0x agregado. Para la conversión con X, un resultado distinto de cero trendrá un prefijo 0X agregado. Para la conversión con b, un resultado distinto de cero tendrá un prefijo 0b agregado. Para la conversión B, un resultado distinto de cero tendrá un prefijo 0B agregado. Para otras conversiones, la bandera se ignora.
+- `#` Presentará la forma alternativa del resultado. Para la conversión de 0, la forma alternativa es como si se aumentara la precisión de tal manera que el primer dígito del resultado se ve obligado a ser cero. Para la conversión con x, un resultado distinto a cero tendrá un prefijo 0x agregado. Para la conversión con X, un resultado distinto de cero trendrá un prefijo 0X agregado. Para la conversión con b, un resultado distinto de cero tendrá un prefijo 0b agregado. Para la conversión B, un resultado distinto de cero tendrá un prefijo 0B agregado. Para otras conversiones, la bandera se ignora.
 - `-` El resultado se justificará a la izquierda. Si no se especifica esta bandera, el resultado estará justificado a la derecha.
 - `+` Para una conversión con signo, el resultado siempre comenzará con un signo + o -. De forma predeterminada, solo se agrega un carácter de signo al resultado si el resultado es negativo. Para otras conversiones, la bandera se ignora.
 - `espacio` Para una conversión firmada, si el resultado no es negativo o no tiene caracteres, se antepondrá un espacio al resultado. Si se especifican los indicadores de espacio y +, se ignorará el indicador de espacio. Para ptras conversiones, la bandera se ignora.
 - `0` Para las conversiones (d, i, o, u, b, B, x, X), los ceros iniciales se anteponen al resultado (después de cualquier signo y/o indicador de base) de modo que el resultado llene el ancho de campo. No se realiza relleno de espacio. Si también se especifica el indicador -, se ignorará el indicador 0. Si se especifica una precisión, se ignorará el indicador 0. Para otras conversione, la bandera se ignora.
 
 ### Precisión de campo
-La precisión de campo especifica el número mínimo de dígitos que estarán presentes en el valor convertido para la conversión ad, i, o, u, b, B, x o X, o el número máximo de caracteres en el valor convertido para una s conversión.
+La precisión de campo especifica el número mínimo de dígitos que estarán presentes en el valor convertido para la conversión a d, i, o, u, b, B, x o X, o el número máximo de caracteres en el valor convertido para una s conversión.
 Si el ancho del campo es un carácter de asterisco, *, se lee un argumento int para especificar el ancho del campo. Si el valor es negativo, es como si la precisión no estuviera especificada.
 Para los operadores de conversión d, i, o, u, b, B, x o X, la precisión predeterminada es 1. Para todos los demás operadores de conversión, el comportamiento cuando no se especifica la precisión se describe a continuación.
 
@@ -91,7 +92,7 @@ Para los operadores de conversión d, i, o, u, b, B, x o X, la precisión predet
 El carácter de especificación de tamaño se aplica a los especificadores de conversión de enteros, d, i, o, u, b, B, x o X, y el apuntador de conversión especificado, p y P. Si se presenta cualquier otro operador de conversión, este es ignorado.
 - `hh` Para los especificadores de conversión de enteros, el argumento a convertir es un argumento char con signo o un char sin signo. Para un especificador de conversión n, el especificador denota un puntero a un argumento char con signo.
 - `h` Para los especificadores de conversión de enteros, el argumento a convertir es un int corto o un int corto sin signo. Para un especificador de conversión n, el especificador denota un puntero a un argumento int corto. Como un int simple tiene el mismo tamaño que un int corto para MPLAB C18, esta opción no tiene ningún efecto real y está presente solo por motivos de compatibilidad. Para los especificadores de conversión de puntero, el argumento a convertir es un puntero de 16 bits.
-- `H` Para los especificadores de conversión de enteros, el argumento a convertir es un int largo corto o un int largo corto sin signo. Para un especificador de versión n conversor, el especificador denota un puntero a un argumento int corto y largo. Para los especificadores de conversión de puntero, el argumento a convertir es un puntero de 24 bits.3 Por ejemplo, cuando se genera un far rom char *, se debe usar el especificador de tamaño H (%HS).
+- `H` Para los especificadores de conversión de enteros, el argumento a convertir es un int largo corto o un int largo corto sin signo. Para un especificador de versión n conversor, el especificador denota un puntero a un argumento int corto y largo. Para los especificadores de conversión de puntero, el argumento a convertir es un puntero de 24 bits. Por ejemplo, cuando se genera un far rom char *, se debe usar el especificador de tamaño H (%HS).
 - `j` Para los especificadores de conversión de enteros, el argumento a convertir es un argumento intmax_t o uintmax_t. Para un especificador de conversión n, el especificador denota un puntero a un argumento intmax_t. Para MPLAB C18, esto es equivalente al especificador de tamaño l.
 - `l` Para los especificadores de conversión de enteros, el argumento que se va a convertir es un entero largo o un entero largo sin signo. Para un especificador de conversión n, el especificador denota un puntero a un argumento int largo. Para los especificadores de conversión de puntero, se ignora el especificador de tamaño.
 - `t` Para los especificadores de conversión de enteros, el argumento a convertir es un argumento ptrdiff_t. Para un especificador de conversión n, el especificador denota un puntero a un tipo de entero con signo correspondiente al argumento ptrdiff_t. Para MPLAB C18, esto es equivalente al especificador de tamaño h.
